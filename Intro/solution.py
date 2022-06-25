@@ -14,6 +14,17 @@ database = csv.DictReader(file, skipinitialspace=True)
 
 def main():
     for row in database:
+        # Puzzle 3
+        time = row.get("First Login Time")
+
+        if time == "99:99":
+            continue
+
+        timeArray = list(map(int, time.split(":")))
+
+        if timeArray[0] > 7 or timeArray[1] > 14:
+            continue
+
         # Puzzle 1
         if "814" not in row.get("ID"):
             continue
@@ -24,17 +35,6 @@ def main():
         binary = binary.rjust(8, "0")
 
         if binary[4] != "1":
-            continue
-
-        # Puzzle 3
-        time = row.get("First Login Time")
-
-        if time == "99:99":
-            continue
-
-        timeArray = list(map(int, time.split(":")))
-
-        if timeArray[0] > 7 or timeArray[1] > 14:
             continue
 
         # Get result

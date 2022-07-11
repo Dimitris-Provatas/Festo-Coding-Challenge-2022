@@ -23,6 +23,8 @@ add_empty_lines () {
 add_boiler_plate () {
   # Python executable path
   echo "#!${PYTHON}" > "$1"
+  echo "" > "$1"
+  echo "import os" > "$1"
 
   # Make it pretty
   add_empty_lines "$1"

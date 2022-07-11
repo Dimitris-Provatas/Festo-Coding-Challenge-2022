@@ -2,6 +2,7 @@
   "python.formatting.provider": "black",
   "nuxt.isNuxtApp": false,
   "cSpell.words": [
+    "picoico",
     "skspatial"
   ]
 }

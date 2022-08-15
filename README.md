@@ -6,6 +6,8 @@ This code is not optimized or well thought out, it is here to get the job done. 
 
 This coding challenge is really fun, yet challenging enough to be engaging and interesting. 🔥
 
+The project is written in Python 3.9.7, hence the missing of some "QoL" features, such as `switch` statements.
+
 ## Contents
 
 - Each directory is named after the sub-challenge it solves.

@@ -2,6 +2,17 @@
 
 numofpuzzles=1
 
+# Get working dir
+PWD=$(pwd)
+# File name and path
+SOLUTION="$PWD/$1/solution.py"
+PRETTY="$PWD/$1/pretty.py"
+# Create the file
+touch "$SOLUTION"
+touch "$PRETTY"
+# Get the python path
+PYTHON=$(which python)
+
 # We need a file name
 if [[ -z $1 ]]
 then
@@ -23,8 +34,8 @@ add_empty_lines () {
 add_boiler_plate () {
   # Python executable path
   echo "#!${PYTHON}" > "$1"
-  echo "" > "$1"
-  echo "import os" > "$1"
+  echo "" >> "$1"
+  echo "import os" >> "$1"
 
   # Make it pretty
   add_empty_lines "$1"
@@ -66,17 +77,6 @@ add_boiler_plate () {
   # Make the file executable
   chmod +x "$1"
 }
-
-# Get working dir
-PWD=$(pwd)
-# File name and path
-SOLUTION="$PWD/$1/solution.py"
-PRETTY="$PWD/$1/pretty.py"
-# Create the file
-touch "$SOLUTION"
-touch "$PRETTY"
-# Get the python path
-PYTHON=$(which python)
 
 # Create the files
 add_boiler_plate "$SOLUTION" $2
